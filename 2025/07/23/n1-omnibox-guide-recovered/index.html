@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>斐讯 N1 变身全能影视库：OmniBox 部署保姆级指南（待校对恢复稿） | 阿Q的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="说明：本文为“搜索引擎片段恢复稿”，并非完整原文。请后续人工校对补全。  前言（片段恢复）斐讯 N1 凭借较高性价比，被不少极客用户作为家庭折腾设备使用。刷入 iStoreOS 后，通过 Docker 部署 OmniBox，可以作为私人影视聚合与导航中心。 阶段一：准备工作（片段恢复）根据索引片段，原文提到：  一台已刷入 iStoreOS 的斐讯 N1 OmniBox 配置文件（JSON） 其">
+<meta property="og:type" content="article">
+<meta property="og:title" content="斐讯 N1 变身全能影视库：OmniBox 部署保姆级指南（待校对恢复稿）">
+<meta property="og:url" content="https://757688.xyz/2025/07/23/n1-omnibox-guide-recovered/index.html">
+<meta property="og:site_name" content="阿Q的个人博客">
+<meta property="og:description" content="说明：本文为“搜索引擎片段恢复稿”，并非完整原文。请后续人工校对补全。  前言（片段恢复）斐讯 N1 凭借较高性价比，被不少极客用户作为家庭折腾设备使用。刷入 iStoreOS 后，通过 Docker 部署 OmniBox，可以作为私人影视聚合与导航中心。 阶段一：准备工作（片段恢复）根据索引片段，原文提到：  一台已刷入 iStoreOS 的斐讯 N1 OmniBox 配置文件（JSON） 其">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-07-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-04T03:44:53.265Z">
+<meta property="article:author" content="Yang Chen">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="OmniBox">
+<meta property="article:tag" content="iStoreOS">
+<meta property="article:tag" content="影视">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="阿Q的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">阿Q的个人博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://757688.xyz"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-n1-omnibox-guide-recovered" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/07/23/n1-omnibox-guide-recovered/" class="article-date">
+  <time class="dt-published" datetime="2025-07-22T16:00:00.000Z" itemprop="datePublished">2025-07-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      斐讯 N1 变身全能影视库：OmniBox 部署保姆级指南（待校对恢复稿）
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>说明：本文为“搜索引擎片段恢复稿”，并非完整原文。请后续人工校对补全。</p>
+</blockquote>
+<h2 id="前言（片段恢复）"><a href="#前言（片段恢复）" class="headerlink" title="前言（片段恢复）"></a>前言（片段恢复）</h2><p>斐讯 N1 凭借较高性价比，被不少极客用户作为家庭折腾设备使用。刷入 iStoreOS 后，通过 Docker 部署 OmniBox，可以作为私人影视聚合与导航中心。</p>
+<h2 id="阶段一：准备工作（片段恢复）"><a href="#阶段一：准备工作（片段恢复）" class="headerlink" title="阶段一：准备工作（片段恢复）"></a>阶段一：准备工作（片段恢复）</h2><p>根据索引片段，原文提到：</p>
+<ol>
+<li>一台已刷入 iStoreOS 的斐讯 N1</li>
+<li>OmniBox 配置文件（JSON）</li>
+<li>其余依赖资源（待补充）</li>
+</ol>
+<h2 id="阶段二：存储扩容（片段恢复）"><a href="#阶段二：存储扩容（片段恢复）" class="headerlink" title="阶段二：存储扩容（片段恢复）"></a>阶段二：存储扩容（片段恢复）</h2><p>原文片段提到：</p>
+<ul>
+<li>为 Docker 运行环境腾空间</li>
+<li>对 N1 的存储进行扩容</li>
+</ul>
+<blockquote>
+<p>具体命令与截图缺失，待补充。</p>
+</blockquote>
+<h2 id="后续章节（待补全）"><a href="#后续章节（待补全）" class="headerlink" title="后续章节（待补全）"></a>后续章节（待补全）</h2><ul>
+<li>Docker 部署步骤</li>
+<li>OmniBox 配置导入</li>
+<li>常见问题排查</li>
+</ul>
+<hr>
+<h3 id="原始线索"><a href="#原始线索" class="headerlink" title="原始线索"></a>原始线索</h3><ul>
+<li>旧链接（已失效）：<ul>
+<li><code>http://757688.xyz/index.php/2025/07/23/hello-world/</code></li>
+</ul>
+</li>
+<li>索引标题：<ul>
+<li>「斐讯 N1 变身全能影视库：OmniBox 部署保姆级指南」</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://757688.xyz/2025/07/23/n1-omnibox-guide-recovered/" data-id="cuidWeufhf-JETl7Zud7PHAWs" data-title="斐讯 N1 变身全能影视库：OmniBox 部署保姆级指南（待校对恢复稿）" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OmniBox/" rel="tag">OmniBox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iStoreOS/" rel="tag">iStoreOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BD%B1%E8%A7%86/" rel="tag">影视</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/12/04/gmail-registration-recovered/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          最新谷歌账号 Gmail 邮箱注册方法（待校对恢复稿）
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gmail/" rel="tag">Gmail</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/" rel="tag">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OmniBox/" rel="tag">OmniBox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iStoreOS/" rel="tag">iStoreOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E5%91%8A/" rel="tag">公告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BA%E6%B5%B7/" rel="tag">出海</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BD%B1%E8%A7%86/" rel="tag">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%81%E7%A7%BB/" rel="tag">迁移</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Gmail/" style="font-size: 10px;">Gmail</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/OmniBox/" style="font-size: 10px;">OmniBox</a> <a href="/tags/iStoreOS/" style="font-size: 10px;">iStoreOS</a> <a href="/tags/%E5%85%AC%E5%91%8A/" style="font-size: 10px;">公告</a> <a href="/tags/%E5%87%BA%E6%B5%B7/" style="font-size: 10px;">出海</a> <a href="/tags/%E5%BD%B1%E8%A7%86/" style="font-size: 10px;">影视</a> <a href="/tags/%E8%BF%81%E7%A7%BB/" style="font-size: 10px;">迁移</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">三月 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">十二月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">七月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/03/03/hello-world/">关于本站</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/03/%E8%BF%81%E7%A7%BB%E5%AE%8C%E6%88%90%EF%BC%8C%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E6%96%B0%E5%8D%9A%E5%AE%A2/">迁移完成，欢迎来到新博客</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/04/gmail-registration-recovered/">最新谷歌账号 Gmail 邮箱注册方法（待校对恢复稿）</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/23/n1-omnibox-guide-recovered/">斐讯 N1 变身全能影视库：OmniBox 部署保姆级指南（待校对恢复稿）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 Yang Chen<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
